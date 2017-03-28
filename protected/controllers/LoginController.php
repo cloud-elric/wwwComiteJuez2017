@@ -112,9 +112,11 @@ class LoginController extends Controller {
 			
 			if (count ( $concursos ) > 1) {
 			} else {
-				$url = Yii::app ()->createUrl ( 'judgingPanel/index', array (
-						"t" => $concursos->idContest->txt_token 
-				) );
+// 				$url = Yii::app ()->createUrl ( 'judgingPanel/index', array (
+// 						"t" => $concursos->idContest->txt_token 
+// 				) );
+
+				$url = Yii::app ()->createUrl ( 'judgingPanel/concursos');
 				$this->redirect ( $url );
 			}
 		} else if ($juezSession->b_juez_admin == 1) { // Si el b_juez_admin es 1 es un admin

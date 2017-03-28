@@ -114,7 +114,7 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'webmaster@example.com',
-		'pathBaseImages'=>"https://globaljudging.com/community/pictures/contests/con_con_73cdf1c4f187ef82b94a945feae9d32a5783ddc623258/",
+		'pathBaseImages'=>"https://globaljudging.com/community/pictures/contests/",//con_con_73cdf1c4f187ef82b94a945feae9d32a5783ddc623258/,
 		//'pathBaseImages'=>"http://localhost/wwwComiteConcursante/pictures/contests/con_3c391e5c9feec1f95282a36bdd5d41ba/",
 		//'pathBaseImages'=>"https://hazclicconmexico.comitefotomx.com/concursar/pictures/contests/con_3c391e5c9feec1f95282a36bdd5d41ba/",
 			

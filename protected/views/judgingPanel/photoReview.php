@@ -111,6 +111,10 @@ $this->title = Yii::t('site', 'Photo Judging - Photo Review');
 				
 				<div class="col-sm-12 text-right">
 					<div class="checkbox-custom checkbox-primary">
+					<?php if($retro == 1){
+				?>
+					<p>Retroalimentacio</p>
+				<?php }?>
 	                  <?=CHtml::checkbox('isCalificada')?>
 	                  <label for="isCalificada"><?=Yii::t('photoReview', 'isCalificada')?></label>
 	                </div>
@@ -152,7 +156,7 @@ $this->title = Yii::t('site', 'Photo Judging - Photo Review');
 
 	<section class="dgom-ui-photo-wrapper">
 		<div class="dgom-ui-photo">
-			<img style="display: none;" id="dgom-js-bkgdImage" name="dgom-js-bkgdImage" src="<?php echo Yii::app ()->params ['pathBaseImages']."idu_".$photoCalificar->iD->txt_usuario_number.DIRECTORY_SEPARATOR."large_".$photoCalificar->txt_file_name?>">
+			<img style="display: none;" id="dgom-js-bkgdImage" name="dgom-js-bkgdImage" src="<?php echo Yii::app ()->params ['pathBaseImages']."con_". $concurso->txt_token."/idu_". $photoCalificar->iD->txt_usuario_number.DIRECTORY_SEPARATOR."large_".$photoCalificar->txt_file_name?>">
 		</div>
 	</section>
 	

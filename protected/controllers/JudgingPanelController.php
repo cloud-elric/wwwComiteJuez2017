@@ -228,7 +228,7 @@ class JudgingPanelController extends Controller {
 				) 
 		) );
 		
-		$photoCalificar = $this->searchPicCal ( $idJuez, $categoria->id_category );
+		$photoCalificar = $this->searchPicCal ( $idJuez, $categoria->id_category, $concurso->id_contest);
 		
 		// Si no hay foto a calificar
 		if (empty ( $photoCalificar )) {
@@ -406,9 +406,10 @@ class JudgingPanelController extends Controller {
 		
 		// Cargamos categorias
 		$criteriaCategorias = new CDbCriteria ();
-		$criteriaCategorias->condition = 'id_contest=1 AND id_category NOT IN (:idPic)';
+		$criteriaCategorias->condition = 'id_contest=:idCon AND id_category NOT IN (:idPic)';
 		$criteriaCategorias->params = array (
-				':idPic' => $photoCalificar->id_category_original 
+				':idPic' => $photoCalificar->id_category_original,
+				'idCon' => $concurso->id_contest
 		);
 		
 		$categorias = Categoiries::model ()->findAll ( $criteriaCategorias );
@@ -493,7 +494,8 @@ class JudgingPanelController extends Controller {
 		) );
 		
 		$photoCalificar = $this->searchPicCal ( $idJuez, $categoria->id_category );
-		
+// 		var_dump($photoCalificar);
+// 		exit();
 		// Si no hay foto a calificar
 		if (empty ( $photoCalificar )) {
 			$this->redirect ( array (
@@ -504,9 +506,10 @@ class JudgingPanelController extends Controller {
 		
 		// Cargamos categorias
 		$criteriaCategorias = new CDbCriteria ();
-		$criteriaCategorias->condition = 'id_contest=1 AND id_category NOT IN (:idPic)';
+		$criteriaCategorias->condition = 'id_contest=:idConcurso AND id_category NOT IN (:idPic)';
 		$criteriaCategorias->params = array (
-				':idPic' => $photoCalificar->id_category_original 
+				':idPic' => $photoCalificar->id_category_original,
+				":idConcurso" => $concurso->id_contest
 		);
 		
 		$categorias = Categoiries::model ()->findAll ( $criteriaCategorias );
@@ -529,6 +532,17 @@ class JudgingPanelController extends Controller {
 				) 
 		) );
 		
+		$foto = ViewUsuarioPicsProductos::model()->find(array(
+			'condition' => 'txt_pic_number=:idPic',
+			'params' => array(
+				':idPic' => $photoCalificar->txt_pic_number
+			)	
+		));
+		$retro = 0;
+		if(strpos($foto->txt_description, "Retroalimentación")){
+			$retro = 1;
+		}
+		
 		if (empty ( $rubros )) {
 			$rubros = CatCalificacionesRubros::model ()->findAll ( array (
 					"condition" => "b_habilitado=1 AND id_contest=:idContest",
@@ -544,7 +558,9 @@ class JudgingPanelController extends Controller {
 					"rubros" => $rubros,
 					't' => $t,
 					'idCategoria' => $idCategoria,
-					'hasFeedback' => $hasFeedback 
+					'hasFeedback' => $hasFeedback,
+					'concurso' => $concurso,
+					'retro' => $retro
 			) );
 			
 			return;
