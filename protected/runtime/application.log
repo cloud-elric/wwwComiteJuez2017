@@ -1,0 +1,546 @@
+2017/03/29 18:45:23 [error] [system.db.CDbCommand] Error in preparing SQL: DELETE FROM YiiCache WHERE expire>0 AND expire<1490805923
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 18:45:23 [error] [system.db.CDbCommand] CDbCommand::execute() falló: CDbCommand falló al preparar la sentencia SQL: SQLSTATE[HY000]: General error: 1 no such table: YiiCache. La sentencia SQL ejecutada fue: DELETE FROM YiiCache WHERE expire>0 AND expire<1490805923.
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 18:46:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'La pagina solicitada no existe' in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php:97
+Stack trace:
+#0 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(114): JudgingPanelController->existeConcurso('concursos')
+#1 [internal function]: JudgingPanelController->actionIndex('concursos')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(JudgingPanelController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(JudgingPanelController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('judgingPanel/in...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/wwwComiteJuez2017/judgingPanel/concursos
+HTTP_REFERER=http://localhost/wwwComiteJuez2017/login
+---
+2017/03/29 18:47:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'La pagina solicitada no existe' in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php:97
+Stack trace:
+#0 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(114): JudgingPanelController->existeConcurso('concursos')
+#1 [internal function]: JudgingPanelController->actionIndex('concursos')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(JudgingPanelController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(JudgingPanelController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('judgingPanel/in...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/wwwComiteJuez2017/judgingPanel/concursos
+---
+2017/03/29 18:53:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'La pagina solicitada no existe' in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php:97
+Stack trace:
+#0 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(114): JudgingPanelController->existeConcurso('concursos')
+#1 [internal function]: JudgingPanelController->actionIndex('concursos')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(JudgingPanelController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(JudgingPanelController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('judgingPanel/in...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/wwwComiteJuez2017/judgingPanel/concursos
+---
+2017/03/29 18:54:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'La pagina solicitada no existe' in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php:97
+Stack trace:
+#0 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(114): JudgingPanelController->existeConcurso('concursos')
+#1 [internal function]: JudgingPanelController->actionIndex('concursos')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(JudgingPanelController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(JudgingPanelController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('judgingPanel/in...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/wwwComiteJuez2017/judgingPanel/concursos
+---
+2017/03/29 18:55:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'La pagina solicitada no existe' in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php:97
+Stack trace:
+#0 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(114): JudgingPanelController->existeConcurso('concursos')
+#1 [internal function]: JudgingPanelController->actionIndex('concursos')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(JudgingPanelController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(JudgingPanelController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('judgingPanel/in...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/wwwComiteJuez2017/judgingPanel/concursos
+---
+2017/03/29 18:57:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'La pagina solicitada no existe' in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php:97
+Stack trace:
+#0 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(114): JudgingPanelController->existeConcurso('concursos')
+#1 [internal function]: JudgingPanelController->actionIndex('concursos')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(JudgingPanelController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(JudgingPanelController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('judgingPanel/in...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/wwwComiteJuez2017/judgingPanel/concursos
+---
+2017/03/29 18:58:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'La pagina solicitada no existe' in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php:97
+Stack trace:
+#0 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(114): JudgingPanelController->existeConcurso('concursos')
+#1 [internal function]: JudgingPanelController->actionIndex('concursos')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(JudgingPanelController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(JudgingPanelController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('judgingPanel/in...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/wwwComiteJuez2017/judgingPanel/concursos
+---
+2017/03/29 19:03:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'La pagina solicitada no existe' in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php:97
+Stack trace:
+#0 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(114): JudgingPanelController->existeConcurso('concursos')
+#1 [internal function]: JudgingPanelController->actionIndex('concursos')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(JudgingPanelController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(JudgingPanelController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('judgingPanel/in...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/wwwComiteJuez2017/judgingPanel/concursos
+HTTP_REFERER=http://localhost/wwwComiteJuez2017/login
+---
+2017/03/29 19:03:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'La pagina solicitada no existe' in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php:97
+Stack trace:
+#0 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(114): JudgingPanelController->existeConcurso('concursos')
+#1 [internal function]: JudgingPanelController->actionIndex('concursos')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(JudgingPanelController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(JudgingPanelController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('judgingPanel/in...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/wwwComiteJuez2017/judgingPanel/concursos
+HTTP_REFERER=http://localhost/wwwComiteJuez2017/login
+---
+2017/03/29 19:04:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'La pagina solicitada no existe' in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php:97
+Stack trace:
+#0 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(114): JudgingPanelController->existeConcurso('concursos')
+#1 [internal function]: JudgingPanelController->actionIndex('concursos')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(JudgingPanelController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(JudgingPanelController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('judgingPanel/in...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/wwwComiteJuez2017/judgingPanel/concursos
+HTTP_REFERER=http://localhost/wwwComiteJuez2017/login
+---
+2017/03/29 19:05:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "wwwComiteJuez2017/judgingPanel/concursos"' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('wwwComiteJuez20...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/wwwComiteJuez2017/wwwComiteJuez2017/judgingPanel/concursos
+HTTP_REFERER=http://localhost/wwwComiteJuez2017/login
+---
+2017/03/29 19:06:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'La pagina solicitada no existe' in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php:97
+Stack trace:
+#0 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(114): JudgingPanelController->existeConcurso('concursos')
+#1 [internal function]: JudgingPanelController->actionIndex('concursos')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(JudgingPanelController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(JudgingPanelController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('judgingPanel/in...')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/wwwComiteJuez2017/judgingPanel/concursos
+HTTP_REFERER=http://localhost/wwwComiteJuez2017/login
+---
+2017/03/29 19:36:04 [error] [php] Missing argument 1 for CActiveForm::textField(), called in C:\xampp\htdocs\wwwComiteJuez2017\protected\views\judgingPanel\photoReview.php on line 114 and defined (C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php:790)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): JudgingPanelController->renderInternal()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(869): JudgingPanelController->renderFile()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(782): JudgingPanelController->renderPartial()
+#3 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(565): JudgingPanelController->render()
+#4 unknown(0): JudgingPanelController->actionPhotoReview()
+#5 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#6 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): JudgingPanelController->runAction()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#11 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): JudgingPanelController->filterAccessControl()
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(265): JudgingPanelController->runActionWithFilters()
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): JudgingPanelController->run()
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CWebApplication->run()
+REQUEST_URI=/wwwComiteJuez2017/judgingPanel/photoReview/cat_d7a6db72637015d99a37592c6c13871f572a883c2d2d7/con_864f324cd5e379b8dc99dd11567c186e5772ed5c80c6b
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\views\judgingPanel\photoReview.php (114)
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (565)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 19:53:38 [warning] [application] Error al establecer unsafe al atributo "WrkPicsCalificaciones" de "WrkPics".
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (271)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 19:53:40 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'sdfsddssf' for column 'num_calificacion' at row 1. La sentencia SQL ejecutada fue: INSERT INTO `2gom_wrk_pics_calificaciones` (`b_mencion`, `id_juez`, `id_pic`, `txt_retro`, `id_contest`, `id_rubro`, `id_categoria_propuesta`, `num_calificacion`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7).
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (310)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 19:53:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'sdfsddssf' for column 'num_calificacion' at row 1. The SQL statement executed was: INSERT INTO `2gom_wrk_pics_calificaciones` (`b_mencion`, `id_juez`, `id_pic`, `txt_retro`, `id_contest`, `id_rubro`, `id_categoria_propuesta`, `num_calificacion`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(310): CActiveRecord->save()
+#3 [internal function]: JudgingPanelController->actionSaveCal('cat_d7a6db72637...', 'con_864f324cd5e...')
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(JudgingPanelController), Array)
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(JudgingPanelController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('saveCal')
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('judgingPanel/sa...')
+#16 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/wwwComiteJuez2017/judgingPanel/saveCal?idCategoria=cat_d7a6db72637015d99a37592c6c13871f572a883c2d2d7&t=con_864f324cd5e379b8dc99dd11567c186e5772ed5c80c6b
+HTTP_REFERER=http://localhost/wwwComiteJuez2017/judgingPanel/photoReview/cat_d7a6db72637015d99a37592c6c13871f572a883c2d2d7/con_864f324cd5e379b8dc99dd11567c186e5772ed5c80c6b
+---
+2017/03/29 20:06:50 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\wwwComiteJuez2017\protected\views\judgingPanel\feedback.php:40)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): JudgingPanelController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): JudgingPanelController->renderPartial()
+#2 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(690): JudgingPanelController->render()
+#3 unknown(0): JudgingPanelController->actionFeedback()
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): JudgingPanelController->runAction()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): JudgingPanelController->filterAccessControl()
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(265): JudgingPanelController->runActionWithFilters()
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): JudgingPanelController->run()
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CWebApplication->run()
+REQUEST_URI=/wwwComiteJuez2017/judgingPanel/feedback?idPhoto=pic_9e4dfa92a4845c5c7b58eddc8c5248775736e9735aafb&t=con_864f324cd5e379b8dc99dd11567c186e5772ed5c80c6b&idCategory=cat_d7a6db72637015d99a37592c6c13871f572a883c2d2d7
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\views\judgingPanel\feedback.php (40)
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (690)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 20:09:54 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\wwwComiteJuez2017\protected\views\judgingPanel\feedback.php:40)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): JudgingPanelController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): JudgingPanelController->renderPartial()
+#2 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(690): JudgingPanelController->render()
+#3 unknown(0): JudgingPanelController->actionFeedback()
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): JudgingPanelController->runAction()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): JudgingPanelController->filterAccessControl()
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(265): JudgingPanelController->runActionWithFilters()
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): JudgingPanelController->run()
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CWebApplication->run()
+REQUEST_URI=/wwwComiteJuez2017/judgingPanel/feedback?idPhoto=pic_9e4dfa92a4845c5c7b58eddc8c5248775736e9735aafb&t=con_864f324cd5e379b8dc99dd11567c186e5772ed5c80c6b&idCategory=cat_d7a6db72637015d99a37592c6c13871f572a883c2d2d7
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\views\judgingPanel\feedback.php (40)
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (690)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 20:09:57 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\wwwComiteJuez2017\protected\views\judgingPanel\feedback.php:40)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): JudgingPanelController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): JudgingPanelController->renderPartial()
+#2 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(690): JudgingPanelController->render()
+#3 unknown(0): JudgingPanelController->actionFeedback()
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): JudgingPanelController->runAction()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): JudgingPanelController->filterAccessControl()
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(265): JudgingPanelController->runActionWithFilters()
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): JudgingPanelController->run()
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CWebApplication->run()
+REQUEST_URI=/wwwComiteJuez2017/judgingPanel/feedback?idPhoto=pic_9e4dfa92a4845c5c7b58eddc8c5248775736e9735aafb&t=con_864f324cd5e379b8dc99dd11567c186e5772ed5c80c6b&idCategory=cat_d7a6db72637015d99a37592c6c13871f572a883c2d2d7
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\views\judgingPanel\feedback.php (40)
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (690)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 20:16:17 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\wwwComiteJuez2017\protected\views\judgingPanel\feedback.php:40)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): JudgingPanelController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): JudgingPanelController->renderPartial()
+#2 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(690): JudgingPanelController->render()
+#3 unknown(0): JudgingPanelController->actionFeedback()
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): JudgingPanelController->runAction()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): JudgingPanelController->filterAccessControl()
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(265): JudgingPanelController->runActionWithFilters()
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): JudgingPanelController->run()
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CWebApplication->run()
+REQUEST_URI=/wwwComiteJuez2017/judgingPanel/feedback?idPhoto=pic_9e4dfa92a4845c5c7b58eddc8c5248775736e9735aafb&t=con_864f324cd5e379b8dc99dd11567c186e5772ed5c80c6b&idCategory=cat_d7a6db72637015d99a37592c6c13871f572a883c2d2d7
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\views\judgingPanel\feedback.php (40)
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (690)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 20:18:34 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\wwwComiteJuez2017\protected\views\judgingPanel\feedback.php:40)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): JudgingPanelController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): JudgingPanelController->renderPartial()
+#2 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(690): JudgingPanelController->render()
+#3 unknown(0): JudgingPanelController->actionFeedback()
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): JudgingPanelController->runAction()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): JudgingPanelController->filterAccessControl()
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(265): JudgingPanelController->runActionWithFilters()
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): JudgingPanelController->run()
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CWebApplication->run()
+REQUEST_URI=/wwwComiteJuez2017/judgingPanel/feedback?idPhoto=pic_9e4dfa92a4845c5c7b58eddc8c5248775736e9735aafb&t=con_864f324cd5e379b8dc99dd11567c186e5772ed5c80c6b&idCategory=cat_d7a6db72637015d99a37592c6c13871f572a883c2d2d7
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\views\judgingPanel\feedback.php (40)
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (690)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 20:33:42 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'comite_2017.wp_users' doesn't exist. La sentencia SQL ejecutada fue: SHOW FULL COLUMNS FROM `wp_users`.
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 20:33:51 [error] [system.db.CDbCommand] CDbCommand::fetchAll() falló: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'comite_2017.wp_users' doesn't exist. La sentencia SQL ejecutada fue: SHOW FULL COLUMNS FROM `wp_users`.
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 20:49:46 [warning] [application] Error al establecer unsafe al atributo "WrkPicsCalificaciones" de "WrkPics".
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (271)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 21:15:35 [warning] [application] Error al establecer unsafe al atributo "WrkPicsCalificaciones" de "WrkPics".
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (272)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 21:15:58 [warning] [application] Error al establecer unsafe al atributo "WrkPicsCalificaciones" de "WrkPics".
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (272)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 21:16:30 [warning] [application] Error al establecer unsafe al atributo "WrkPicsCalificaciones" de "WrkPics".
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (272)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 21:16:45 [warning] [application] Error al establecer unsafe al atributo "WrkPicsCalificaciones" de "WrkPics".
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (272)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 21:17:39 [warning] [application] Error al establecer unsafe al atributo "WrkPicsCalificaciones" de "WrkPics".
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (272)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 21:18:13 [warning] [application] Error al establecer unsafe al atributo "WrkPicsCalificaciones" de "WrkPics".
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (272)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 21:24:48 [warning] [application] Error al establecer unsafe al atributo "WrkPicsCalificaciones" de "WrkPics".
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (272)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 21:26:33 [warning] [application] Error al establecer unsafe al atributo "WrkPicsCalificaciones" de "WrkPics".
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (272)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 21:36:05 [warning] [application] Error al establecer unsafe al atributo "WrkPicsCalificaciones" de "WrkPics".
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (272)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 21:53:59 [error] [system.db.CDbCommand] CDbCommand::fetch() falló: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. La sentencia SQL ejecutada fue: SELECT * FROM `2gom_wrk_pics` `P` WHERE id_pic=:idPic and id_category=:idCategoria and id_contest=:idContest LIMIT 1.
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (236)
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (257)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 21:53:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT * FROM `2gom_wrk_pics` `P` WHERE id_pic=:idPic and id_category=:idCategoria and id_contest=:idContest LIMIT 1' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1356): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1461): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(236): CActiveRecord->find(Object(CDbCriteria))
+#4 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(257): JudgingPanelController->searchPicCalById2('pic_2bde8940f52...', '10', '3', '1')
+#5 [internal function]: JudgingPanelController->actionSaveCal('cat_d7a6db72637...', 'con_864f324cd5e...', 'pic_2bde8940f52...')
+#6 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(JudgingPanelController), Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(JudgingPanelController), Object(ReflectionMethod), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('saveCal')
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('judgingPanel/sa...')
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/wwwComiteJuez2017/judgingPanel/saveCal?idCategoria=cat_d7a6db72637015d99a37592c6c13871f572a883c2d2d7&t=con_864f324cd5e379b8dc99dd11567c186e5772ed5c80c6b&idPic=pic_2bde8940f52a3f9fdf112fcdc3c0c46c577e7fd5de499
+HTTP_REFERER=http://localhost/wwwComiteJuez2017/judgingPanel/photoReview/cat_d7a6db72637015d99a37592c6c13871f572a883c2d2d7/con_864f324cd5e379b8dc99dd11567c186e5772ed5c80c6b
+---
+2017/03/29 21:54:29 [error] [system.db.CDbCommand] CDbCommand::fetch() falló: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. La sentencia SQL ejecutada fue: SELECT * FROM `2gom_wrk_pics` `t` WHERE id_pic=:idPic and id_category=:idCategoria and id_contest=:idContest LIMIT 1.
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (235)
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (256)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 21:54:29 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT * FROM `2gom_wrk_pics` `t` WHERE id_pic=:idPic and id_category=:idCategoria and id_contest=:idContest LIMIT 1' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1356): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1461): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(235): CActiveRecord->find(Object(CDbCriteria))
+#4 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(256): JudgingPanelController->searchPicCalById2('pic_2bde8940f52...', '10', '3', '1')
+#5 [internal function]: JudgingPanelController->actionSaveCal('cat_d7a6db72637...', 'con_864f324cd5e...', 'pic_2bde8940f52...')
+#6 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(JudgingPanelController), Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(JudgingPanelController), Object(ReflectionMethod), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('saveCal')
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('judgingPanel/sa...')
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/wwwComiteJuez2017/judgingPanel/saveCal?idCategoria=cat_d7a6db72637015d99a37592c6c13871f572a883c2d2d7&t=con_864f324cd5e379b8dc99dd11567c186e5772ed5c80c6b&idPic=pic_2bde8940f52a3f9fdf112fcdc3c0c46c577e7fd5de499
+---
+2017/03/29 21:58:31 [error] [system.db.CDbCommand] CDbCommand::fetch() falló: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. La sentencia SQL ejecutada fue: SELECT * FROM `2gom_wrk_pics` `P` WHERE p.id_pic=:idPic and p.id_category=:idCategoria and p.id_contest=:idContest LIMIT 1.
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (236)
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (258)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/29 21:58:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT * FROM `2gom_wrk_pics` `P` WHERE p.id_pic=:idPic and p.id_category=:idCategoria and p.id_contest=:idContest LIMIT 1' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1356): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1461): CActiveRecord->query(Object(CDbCriteria))
+#3 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(236): CActiveRecord->find(Object(CDbCriteria))
+#4 C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php(258): JudgingPanelController->searchPicCalById2('pic_2bde8940f52...', '10', '3', '1')
+#5 [internal function]: JudgingPanelController->actionSaveCal('cat_d7a6db72637...', 'con_864f324cd5e...', 'pic_2bde8940f52...')
+#6 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(JudgingPanelController), Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(JudgingPanelController), Object(ReflectionMethod), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('saveCal')
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('judgingPanel/sa...')
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/wwwComiteJuez2017/judgingPanel/saveCal?idCategoria=cat_d7a6db72637015d99a37592c6c13871f572a883c2d2d7&t=con_864f324cd5e379b8dc99dd11567c186e5772ed5c80c6b&idPic=pic_2bde8940f52a3f9fdf112fcdc3c0c46c577e7fd5de499
+---

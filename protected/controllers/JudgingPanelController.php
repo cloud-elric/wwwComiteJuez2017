@@ -214,9 +214,33 @@ class JudgingPanelController extends Controller {
 	}
 	
 	/**
+	 * Busca la fotografia que no haya calificado el juez
+	 *
+	 * @param unknown $idJuez
+	 * @param unknown $idCategoria
+	 * @param number $concurso
+	 */
+	private function searchPicCalById2($idPic, $idJuez, $idCategoria, $concurso = 1) {
+	
+		// Condiciones de busqueda
+		$criteria = new CDbCriteria ();
+		$criteria->condition = "id_pic=:idPic and id_category=:idCategoria and id_contest=:idContest";
+		$criteria->params = array (
+				":idJuez" => $idJuez,
+				":idCategoria" => $idCategoria,
+				":idContest" => $concurso,
+				':idPic' => $idPic
+		);
+	
+		$photoCalificar = WrkPics::model ()->find ( $criteria );
+	
+		return $photoCalificar;
+	}
+	
+	/**
 	 * Guarda la calificacion
 	 */
-	public function actionSaveCal($idCategoria = null, $t = null) {
+	public function actionSaveCal($idCategoria = null, $t = null, $idPic = null) {
 		$concurso = $this->existeConcurso ( $t );
 		
 		$idJuez = Yii::app ()->user->juezLogueado->id_juez;
@@ -229,7 +253,8 @@ class JudgingPanelController extends Controller {
 				) 
 		) );
 		
-		$photoCalificar = $this->searchPicCal ( $idJuez, $categoria->id_category, $concurso->id_contest);
+		//$photoCalificar = $this->searchPicCal ( $idJuez, $categoria->id_category, $concurso->id_contest);
+		$photoCalificar = $this->searchPicCalById2($idPic, $idJuez, $categoria->id_category, $concurso->id_contest);
 		
 		// Si no hay foto a calificar
 		if (empty ( $photoCalificar )) {
@@ -495,8 +520,6 @@ class JudgingPanelController extends Controller {
 		) );
 		
 		$photoCalificar = $this->searchPicCal ( $idJuez, $categoria->id_category );
-// 		var_dump($photoCalificar);
-// 		exit();
 		// Si no hay foto a calificar
 		if (empty ( $photoCalificar )) {
 			$this->redirect ( array (
@@ -512,6 +535,15 @@ class JudgingPanelController extends Controller {
 				':idPic' => $photoCalificar->id_category_original,
 				":idConcurso" => $concurso->id_contest
 		);
+		
+		//Verificar si el juez pertenece a la categoria para entrar al feedback
+		$relJuezCat = ConRelJuecesCategories::model()->find(array(
+			'condition' => 'id_category=:idCat and id_juez=:idJuez',
+			'params' => array(
+				':idCat' => $categoria->id_category,
+				':idJuez' => $idJuez
+			)
+		));
 		
 		$categorias = Categoiries::model ()->findAll ( $criteriaCategorias );
 		$categoriasList = CHtml::listData ( $categorias, "id_category", "txt_name" );
@@ -533,17 +565,6 @@ class JudgingPanelController extends Controller {
 				) 
 		) );
 		
-		$foto = ViewUsuarioPicsProductos::model()->find(array(
-			'condition' => 'txt_pic_number=:idPic',
-			'params' => array(
-				':idPic' => $photoCalificar->txt_pic_number
-			)	
-		));
-		$retro = 0;
-		if(strpos($foto->txt_description, "Retroalimentación")){
-			$retro = 1;
-		}
-		
 		if (empty ( $rubros )) {
 			$rubros = CatCalificacionesRubros::model ()->findAll ( array (
 					"condition" => "b_habilitado=1 AND id_contest=:idContest",
@@ -561,11 +582,13 @@ class JudgingPanelController extends Controller {
 					'idCategoria' => $idCategoria,
 					'hasFeedback' => $hasFeedback,
 					'concurso' => $concurso,
-					'retro' => $retro
 			) );
 			
 			return;
-		} else {
+		}
+// 		var_dump($relJuezCat);
+// 		exit();
+		if(!empty ( $rubros ) && $relJuezCat){
 			$this->redirect ( array (
 					"judgingPanel/feedback",
 					"idPhoto" => $photoCalificar->txt_pic_number,
@@ -921,7 +944,6 @@ AND id_pic NOT IN (SELECT id_pic FROM 2gom_con_calificaciones_desempate WHERE id
 	 * 
 	 */
 	public function actionConcursos(){
-		
 		$this->layout = "column5";
 		
 		$idJuez = Yii::app ()->user->juezLogueado->id_juez;

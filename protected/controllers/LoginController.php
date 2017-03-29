@@ -111,6 +111,7 @@ class LoginController extends Controller {
 			) );
 			
 			if (count ( $concursos ) > 1) {
+				exit();
 			} else {
 // 				$url = Yii::app ()->createUrl ( 'judgingPanel/index', array (
 // 						"t" => $concursos->idContest->txt_token 
