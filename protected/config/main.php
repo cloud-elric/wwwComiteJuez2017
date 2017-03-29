@@ -46,16 +46,16 @@ return array(
 		'urlManager'=>array(
 			'urlFormat' => 'path',
 			'showScriptName'=>false,
-// 			'rules'=>array(
-// 				'logout'=>'login/logout',
-// 				'judgingPanel/photoReview/<idCategoria:\w+>/<t:\w+>'=>'judgingPanel/photoReview',
-// 				'judgingPanel/test'=>'judgingPanel/test',
-// 				'judgingPanel/categoriaFinalizada'=>'judgingPanel/categoriaFinalizada',
-// 				'judgingPanel/tieBreakerRound'=>'judgingPanel/tieBreakerRound',	
-// 				'judgingPanel/breakerRoundByCategory/<id:\w+>'=>'judgingPanel/breakerRoundByCategory',
-// 				'judgingPanel/desempate'=>'judgingPanel/desempate',
-// 				'judgingPanel/viewScorePhoto/<idPic:\w+>/<idCategoria:\w+>/<t:\w+>'=>'judgingPanel/viewScorePhoto',
-// 				'judgingPanel/<t:\w+>'=>'judgingPanel/index',
+			'rules'=>array(
+				'logout'=>'login/logout',
+				'judgingPanel/photoReview/<idCategoria:\w+>/<t:\w+>'=>'judgingPanel/photoReview',
+				'judgingPanel/test'=>'judgingPanel/test',
+				'judgingPanel/categoriaFinalizada'=>'judgingPanel/categoriaFinalizada',
+				'judgingPanel/tieBreakerRound'=>'judgingPanel/tieBreakerRound',	
+				'judgingPanel/breakerRoundByCategory/<id:\w+>'=>'judgingPanel/breakerRoundByCategory',
+				'judgingPanel/desempate'=>'judgingPanel/desempate',
+				'judgingPanel/viewScorePhoto/<idPic:\w+>/<idCategoria:\w+>/<t:\w+>'=>'judgingPanel/viewScorePhoto',
+				'judgingPanel/<t:\w+>'=>'judgingPanel/index',
 					
 // 				'adminPanel/photosCategory/<t:\w+>'=>'juecesAdmin/adashboard2',
 // 				'adminPanel/resolveConflict/<t:\w+>'=>'juecesAdmin/evaluador',
@@ -72,7 +72,7 @@ return array(
 // 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 // 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 // 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-// 			),
+ 			),
 		),
 			'cache'=>array(
 					'class'=>'CDbCache',
