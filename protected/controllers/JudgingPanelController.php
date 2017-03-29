@@ -175,6 +175,7 @@ class JudgingPanelController extends Controller {
 								P.id_pic NOT IN(SELECT PC.id_pic FROM 2gom_wrk_pics_calificaciones PC INNER JOIN 2gom_wrk_pics_juez_cal C on C.id_juez = PC.id_juez AND C.id_pic = PC.id_pic AND C.id_contest = PC.id_contest 
 								WHERE PC.id_pic =P.id_pic AND PC.id_juez=:idJuez AND PC.id_contest=:idContest) 
 								AND P.b_status=2";
+		$criteria->order = 'RAND()';
 		$criteria->params = array (
 				":idJuez" => $idJuez,
 				":idCategoria" => $idCategoria,

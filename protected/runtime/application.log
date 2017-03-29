@@ -1514,3 +1514,9 @@ Stack trace:
 REQUEST_URI=/wwwComiteJuez2017/judgingPanel/photoReview/idCategoria/cat_d7a6db72637015d99a37592c6c13871f572a883c2d2d7/t/con_864f324cd5e379b8dc99dd11567c186e5772ed5c80c6b
 HTTP_REFERER=http://localhost/wwwComiteJuez2017/judgingPanel/index/t/con_864f324cd5e379b8dc99dd11567c186e5772ed5c80c6b
 ---
+2017/03/28 16:49:47 [warning] [application] Error al establecer unsafe al atributo "WrkPicsCalificaciones" de "WrkPics".
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (271)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/03/28 16:50:03 [warning] [application] Error al establecer unsafe al atributo "WrkPicsCalificaciones" de "WrkPics".
+in C:\xampp\htdocs\wwwComiteJuez2017\protected\controllers\JudgingPanelController.php (271)
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
