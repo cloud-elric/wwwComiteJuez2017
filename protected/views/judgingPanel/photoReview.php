@@ -129,7 +129,7 @@ $this->title = Yii::t('site', 'Photo Judging - Photo Review');
 			<div class="col-lg-12 col-sm-12 form-group padding-vertical-15 text-center">
 				<button type="submit" class="btn btn-primary enviar ladda-button dgom-ui-pintarFoto-next" id="dgom-js-next-photo" data-style="zoom-out"><span class="ladda-label">
 				<?php 
-				if(empty($hasFeedback)){
+				if(empty($hasFeedback) || empty($relJuezCat)){
 					echo Yii::t('photoReview','nextWithoutFeed'); 	
 				}else{
 					echo Yii::t('photoReview','next');					

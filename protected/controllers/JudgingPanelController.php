@@ -543,15 +543,6 @@ class JudgingPanelController extends Controller {
 				":idConcurso" => $concurso->id_contest
 		);
 		
-		//Verificar si el juez pertenece a la categoria para entrar al feedback
-		$relJuezCat = ConRelJuecesCategories::model()->find(array(
-			'condition' => 'id_category=:idCat and id_juez=:idJuez',
-			'params' => array(
-				':idCat' => $categoria->id_category,
-				':idJuez' => $idJuez
-			)
-		));
-		
 		$categorias = Categoiries::model ()->findAll ( $criteriaCategorias );
 		$categoriasList = CHtml::listData ( $categorias, "id_category", "txt_name" );
 		// Cargamos rubros
@@ -563,6 +554,15 @@ class JudgingPanelController extends Controller {
 						':idPic' => $photoCalificar->id_pic 
 				) 
 		) );
+		
+		//Verificar si el juez pertenece a la categoria para entrar al feedback
+		$relJuezCat = ConRelJuecesCategories::model()->find(array(
+				'condition' => 'id_category=:idCat and id_juez=:idJuez',
+				'params' => array(
+						':idCat' => $photoCalificar->id_category_original,
+						':idJuez' => $idJuez
+				)
+		));
 		
 		// Busca si el dueño de la fotografía compro con feedback
 		$hasFeedback = ViewUsuarioPicsProductos::model ()->find ( array (
@@ -589,6 +589,7 @@ class JudgingPanelController extends Controller {
 					'idCategoria' => $idCategoria,
 					'hasFeedback' => $hasFeedback,
 					'concurso' => $concurso,
+					'relJuezCat' => $relJuezCat
 			) );
 			
 			return;
@@ -600,7 +601,8 @@ class JudgingPanelController extends Controller {
 					"judgingPanel/feedback",
 					"idPhoto" => $photoCalificar->txt_pic_number,
 					't' => $t,
-					'idCategory' => $idCategoria 
+					'idCategory' => $idCategoria,
+					'idContest' => $concurso->id_contest
 			) );
 		}
 		
