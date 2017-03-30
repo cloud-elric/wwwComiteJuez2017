@@ -195,7 +195,6 @@ class JudgingPanelController extends Controller {
 	 * @param number $concurso        	
 	 */
 	private function searchPicCalById($idPic, $idJuez, $idCategoria, $concurso = 1) {
-		
 		// Condiciones de busqueda
 		$criteria = new CDbCriteria ();
 		$criteria->alias = "P";
@@ -222,17 +221,15 @@ class JudgingPanelController extends Controller {
 	 */
 	private function searchPicCalById2($idPic, $idJuez, $idCategoria, $concurso = 1) {
 	
-		// Condiciones de busqueda
-		$criteria = new CDbCriteria ();
-		$criteria->condition = "id_pic=:idPic and id_category=:idCategoria and id_contest=:idContest";
-		$criteria->params = array (
-				":idJuez" => $idJuez,
-				":idCategoria" => $idCategoria,
-				":idContest" => $concurso,
-				':idPic' => $idPic
-		);
-	
-		$photoCalificar = WrkPics::model ()->find ( $criteria );
+		$photoCalificar = WrkPics::model ()->find (array(
+			'condition' => 'txt_pic_number=:idPic and id_category_original=:idCategoria and id_contest=:idContest and b_status=:tipoStatus',
+			'params' => array(
+ 				":idCategoria" => $idCategoria,
+ 				":idContest" => $concurso,
+ 				':idPic' => $idPic,
+				':tipoStatus' => 2
+			)
+		));
 	
 		return $photoCalificar;
 	}
@@ -343,13 +340,23 @@ class JudgingPanelController extends Controller {
 					) 
 			) );
 			
-			if (! empty ( $hasFeedback )) {
+			$relJuezCat = ConRelJuecesCategories::model()->find(array(
+				'condition' => 'id_juez=:idJuez and id_category=:idCat',
+				'params' => array(
+					':idJuez' => $idJuez,
+					':idCat' => $photoCalificar->id_category_original
+				)
+			));
+			
+			if (! empty ( $hasFeedback ) && $relJuezCat) {
 				// if (true) {
 				$this->redirect ( array (
 						"feedback",
 						"idPhoto" => $photoCalificar->txt_pic_number,
 						't' => $t,
-						'idCategory' => $idCategoria 
+						'idCategory' => $idCategoria,
+						'idContest' => $concurso->id_contest
+						
 				) );
 			} else {
 				$cJ = new WrkPicsJuezCal ();
@@ -612,7 +619,7 @@ class JudgingPanelController extends Controller {
 	 *
 	 * @param string $idPhoto        	
 	 */
-	public function actionFeedback($idPhoto = null, $t = null, $idCategory = null) {
+	public function actionFeedback($idPhoto = null, $t = null, $idCategory = null, $idContest = null) {
 		$this->layout = "column3";
 		$idJuez = Yii::app ()->user->juezLogueado->id_juez;
 		
@@ -656,7 +663,8 @@ class JudgingPanelController extends Controller {
 				) 
 		) );
 		
-		$photoCalificar = $this->searchPicCalById ( $idPhoto, $idJuez, $categoria->id_category );
+		//$photoCalificar = $this->searchPicCalById($idPhoto, $idJuez, $categoria->id_category );
+		$photoCalificar = $this->searchPicCalById2($idPhoto, $idJuez, $categoria->id_category, $idContest);
 		
 		// Si no hay foto a calificar
 		if (empty ( $photoCalificar )) {
