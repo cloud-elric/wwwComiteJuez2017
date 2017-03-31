@@ -37,7 +37,7 @@ $this->title = Yii::t ( 'site', 'Photo Judging - Photo Review' );
 		<div
 			class="dgom-ui-pintar-photo-wrap-panel2 dgom-ui-pintar-photo-wrap-panel-photo">
 			<img
-				src="<?php echo Yii::app ()->params ['pathBaseImages']."idu_".$photoCalificar->iD->txt_usuario_number.DIRECTORY_SEPARATOR."medium_".$photoCalificar->txt_file_name?>"
+				src="<?php echo Yii::app ()->params ['pathBaseImages']."con_".$t.DIRECTORY_SEPARATOR."idu_".$photoCalificar->iD->txt_usuario_number.DIRECTORY_SEPARATOR."medium_".$photoCalificar->txt_file_name?>"
 				alt="" id="dgom-ui-pintar-photo-wrap-panel2-image">
 		</div>
 
