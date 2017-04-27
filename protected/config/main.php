@@ -55,7 +55,7 @@ return array(
 				'judgingPanel/breakerRoundByCategory/<id:\w+>'=>'judgingPanel/breakerRoundByCategory',
 				'judgingPanel/desempate'=>'judgingPanel/desempate',
 				'judgingPanel/viewScorePhoto/<idPic:\w+>/<idCategoria:\w+>/<t:\w+>'=>'judgingPanel/viewScorePhoto',
-				'judgingPanel/<t:\w+>'=>'judgingPanel/index',
+			//	'judgingPanel/<t:\w+>'=>'judgingPanel/index',
 					
 // 				'adminPanel/photosCategory/<t:\w+>'=>'juecesAdmin/adashboard2',
 // 				'adminPanel/resolveConflict/<t:\w+>'=>'juecesAdmin/evaluador',
