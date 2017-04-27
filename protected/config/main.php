@@ -55,7 +55,10 @@ return array(
 				'judgingPanel/breakerRoundByCategory/<id:\w+>'=>'judgingPanel/breakerRoundByCategory',
 				'judgingPanel/desempate'=>'judgingPanel/desempate',
 				'judgingPanel/viewScorePhoto/<idPic:\w+>/<idCategoria:\w+>/<t:\w+>'=>'judgingPanel/viewScorePhoto',
-			//	'judgingPanel/<t:\w+>'=>'judgingPanel/index',
+
+// 				'judgingPanel/<t:\w+>'=>'judgingPanel/index',
+// 				'judgingPanel/concursos'=>'judgingPanel/concursos',
+
 					
 // 				'adminPanel/photosCategory/<t:\w+>'=>'juecesAdmin/adashboard2',
 // 				'adminPanel/resolveConflict/<t:\w+>'=>'juecesAdmin/evaluador',
@@ -69,9 +72,9 @@ return array(
 // 				'adminPanel/categoryConflicts'=>'juecesAdmin/conflicts',
 // 				'<controller:\w+>/<action:\w+>/<t:\w+>'=>'<controller>/<action>',
 				
-// 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
-// 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
-// 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
+				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
+				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
  			),
 		),
 			'cache'=>array(

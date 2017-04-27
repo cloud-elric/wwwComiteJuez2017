@@ -5,7 +5,7 @@ $this->title = Yii::t('site', 'Photo Judging - Photo Review');
 			<?php
 			$form = $this->beginWidget ( 'CActiveForm', array (
 					'id' => 'calificar-foto-form',
-					'action' => Yii::app()->createUrl('judgingPanel/saveCal' , array('idCategoria'=>$idCategoria, 't'=>$t)),
+					'action' => Yii::app()->createUrl('judgingPanel/saveCal' , array('idCategoria'=>$idCategoria, 't'=>$t, "idPic" => $photoCalificar->txt_pic_number)),
 					// Please note: When you enable ajax validation, make sure the corresponding
 					// controller action is handling ajax validation correctly.
 					// There is a call to performAjaxValidation() commented in generated controller code.
@@ -108,13 +108,9 @@ $this->title = Yii::t('site', 'Photo Judging - Photo Review');
 					$index ++;
 				}
 				?>
-				
+			
 				<div class="col-sm-12 text-right">
 					<div class="checkbox-custom checkbox-primary">
-					<?php if($retro == 1){
-				?>
-					<p>Retroalimentacio</p>
-				<?php }?>
 	                  <?=CHtml::checkbox('isCalificada')?>
 	                  <label for="isCalificada"><?=Yii::t('photoReview', 'isCalificada')?></label>
 	                </div>
@@ -133,7 +129,7 @@ $this->title = Yii::t('site', 'Photo Judging - Photo Review');
 			<div class="col-lg-12 col-sm-12 form-group padding-vertical-15 text-center">
 				<button type="submit" class="btn btn-primary enviar ladda-button dgom-ui-pintarFoto-next" id="dgom-js-next-photo" data-style="zoom-out"><span class="ladda-label">
 				<?php 
-				if(empty($hasFeedback)){
+				if(empty($hasFeedback) || empty($relJuezCat)){
 					echo Yii::t('photoReview','nextWithoutFeed'); 	
 				}else{
 					echo Yii::t('photoReview','next');					
