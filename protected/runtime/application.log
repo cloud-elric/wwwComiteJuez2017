@@ -1,0 +1,12 @@
+2017/04/27 10:42:00 [error] [system.db.CDbCommand] Error in preparing SQL: DELETE FROM YiiCache WHERE expire>0 AND expire<1493307720
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/04/27 10:42:00 [error] [system.db.CDbCommand] CDbCommand::execute() falló: CDbCommand falló al preparar la sentencia SQL: SQLSTATE[HY000]: General error: 1 no such table: YiiCache. La sentencia SQL ejecutada fue: DELETE FROM YiiCache WHERE expire>0 AND expire<1493307720.
+in C:\xampp\htdocs\wwwComiteJuez2017\index.php (14)
+2017/04/27 10:42:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud " "' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController(' ')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\wwwComiteJuez2017\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/wwwComiteJuez2017/+
+---

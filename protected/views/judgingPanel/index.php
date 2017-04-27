@@ -2,7 +2,17 @@
 $this->title = Yii::t ( 'site', 'titleJudgePanel' );
 ?>
 <div class="container">
-	<div class="row padding-50">
+
+
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+  <li><a data-toggle="tab" href="#menu1">Feedback</a></li>
+  
+</ul>
+
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <div class="row padding-50">
 		<?php
 		foreach ( $avance as $av ) :
 		if($av->num_porcentaje>=100){
@@ -65,5 +75,15 @@ $this->title = Yii::t ( 'site', 'titleJudgePanel' );
 		?>
 
 	</div>
+  </div>
+  <div id="menu1" class="tab-pane fade">
+    <h3>Menu 1</h3>
+    <p>Some content in menu 1.</p>
+  </div>
+  
+</div>
+
+
+	
 </div>
 
