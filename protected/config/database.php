@@ -1,10 +1,10 @@
 <?php
-$debug = false;
+$debug = true;
 $dataBase = array ();
 if ($debug) {
 	$dataBase = array (
 				
-			'connectionString' => 'mysql:host=192.168.0.6;dbname=comite_2017',
+			'connectionString' => 'mysql:host=localhost;dbname=global_judgin_produccion_backup',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => 'root',

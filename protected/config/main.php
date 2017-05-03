@@ -55,6 +55,7 @@ return array(
 				'judgingPanel/breakerRoundByCategory/<id:\w+>'=>'judgingPanel/breakerRoundByCategory',
 				'judgingPanel/desempate'=>'judgingPanel/desempate',
 				'judgingPanel/viewScorePhoto/<idPic:\w+>/<idCategoria:\w+>/<t:\w+>'=>'judgingPanel/viewScorePhoto',
+				'judgingPanel/feedbackReview/<idCategoria:\w+>/<t:\w+>'=>'judgingPanel/feedbackReview',
 
 // 				'judgingPanel/<t:\w+>'=>'judgingPanel/index',
 // 				'judgingPanel/concursos'=>'judgingPanel/concursos',
