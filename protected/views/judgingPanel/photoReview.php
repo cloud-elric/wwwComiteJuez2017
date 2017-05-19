@@ -152,7 +152,8 @@ $this->title = Yii::t('site', 'Photo Judging - Photo Review');
 
 	<section class="dgom-ui-photo-wrapper">
 		<div class="dgom-ui-photo">
-			<img style="display: none;" id="dgom-js-bkgdImage" name="dgom-js-bkgdImage" src="<?php echo Yii::app ()->params ['pathBaseImages']."con_". $concurso->txt_token."/idu_". $photoCalificar->iD->txt_usuario_number.DIRECTORY_SEPARATOR."large_".$photoCalificar->txt_file_name?>">
+			<!--<img style="display: none;" id="dgom-js-bkgdImage" name="dgom-js-bkgdImage" src="<?php echo Yii::app ()->params ['pathBaseImages']."con_". $concurso->txt_token."/idu_". $photoCalificar->iD->txt_usuario_number.DIRECTORY_SEPARATOR."large_".$photoCalificar->txt_file_name?>">-->
+			<img style="display: none;" id="dgom-js-bkgdImage" name="dgom-js-bkgdImage" src="<?php echo Yii::app ()->params ['pathBaseImages']."con_". $concurso->txt_token."/idu_". $photoCalificar->iD->txt_usuario_number.DIRECTORY_SEPARATOR.$photoCalificar->txt_file_name?>">
 		</div>
 	</section>
 	
@@ -442,6 +443,7 @@ $(document).ready(function(){
 			// Colocar Imagen de fondo
 			$("#dgom-js-bkgdImage").hide();
 			$(".dgom-ui-photo").addClass("dgom-ui-photo-bg-full");
+			//$(".dgom-ui-photo").css("backgroundImage", "url('. Yii::app ()->params ["pathBaseImages"]."idu_".$photoCalificar->iD->txt_usuario_number.DIRECTORY_SEPARATOR."/large_".$photoCalificar->txt_file_name .')");
 			$(".dgom-ui-photo").css("backgroundImage", "url('. Yii::app ()->params ["pathBaseImages"]."idu_".$photoCalificar->iD->txt_usuario_number.DIRECTORY_SEPARATOR."/large_".$photoCalificar->txt_file_name .')");
 			panelSelect = true;
 		}

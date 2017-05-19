@@ -162,8 +162,8 @@ foreach ( $countCalificaciones as $key => $empatadas ) {
 				<!-- <img class="overlay-figure" src="<?php # echo Yii::app ()->params ['pathBaseImages']."idu_".$lugar->txt_usuario_number.DIRECTORY_SEPARATOR."small_".$lugar->txt_file_name?>" alt="..."> -->
 				
 				<!-- <figure class="overlay overlay-hover dgom-ui-overlay-cont dgom-ui-overlay-cont-bg" style="background-image: url(http://lorempixel.com/400/200/animals/);"> -->
-				<a href="<?php echo Yii::app ()->params ['pathBaseImages']."idu_".$lugar->txt_usuario_number.DIRECTORY_SEPARATOR."/large_".$lugar->txt_file_name?>">
-					<figure class="overlay overlay-hover dgom-ui-overlay-cont dgom-ui-overlay-cont-bg" style="background-image: url(<?php echo Yii::app ()->params ['pathBaseImages']."idu_".$lugar->txt_usuario_number.DIRECTORY_SEPARATOR."/small_".$lugar->txt_file_name?>);">
+				<a href="<?php echo Yii::app ()->params ['pathBaseImages'].'con_'.$t.DIRECTORY_SEPARATOR."idu_".$lugar->txt_usuario_number.DIRECTORY_SEPARATOR."/large_".$lugar->txt_file_name?>">
+					<figure class="overlay overlay-hover dgom-ui-overlay-cont dgom-ui-overlay-cont-bg" style="background-image: url(<?php echo Yii::app ()->params ['pathBaseImages'].'con_'.$t.DIRECTORY_SEPARATOR."idu_".$lugar->txt_usuario_number.DIRECTORY_SEPARATOR."/small_".$lugar->txt_file_name?>);">
 						<figcaption class="overlay-panel overlay-background overlay-fade overlay-icon"></figcaption>
 					
 						<?php if($lugar->b_mencion==4){?>

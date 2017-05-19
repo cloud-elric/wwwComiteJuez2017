@@ -36,7 +36,7 @@
 				<h5 class="font-size-20"><?=$numFotos?> photos tied</h5>
 			</div>
 			<div class="text-right">
-			<?php echo CHtml::link("Resolve", array("judgingPanel/breakerRoundByCategory", "id"=>$categoria->id_category), array("class"=>"btn btn-raised btn-primary ladda-button", "data-style"=>"expand-left", "data-plugin"=>"ladda"))?>
+			<?php echo CHtml::link("Resolve", array("judgingPanel/breakerRoundByCategory", "id"=>$categoria->id_category, 't'=>$t), array("class"=>"btn btn-raised btn-primary ladda-button", "data-style"=>"expand-left", "data-plugin"=>"ladda"))?>
 			</div>
 		</div>	
 		<?php } }?>

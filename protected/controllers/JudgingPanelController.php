@@ -124,7 +124,7 @@ class JudgingPanelController extends Controller {
 		) );
 		
 		// Revisa si el juez finalizo su trabajo
-		$this->isJuezCompleted ( $idJuez, $concurso->id_contest );
+		$this->isJuezCompleted ( $idJuez, $concurso->id_contest, $t );
 		
 		// Obtenemos el avance del juez
 		$avance = ViewAvanceTotalJuez::model ()->findAll ( array (
@@ -846,15 +846,16 @@ class JudgingPanelController extends Controller {
 	/**
 	 * action para Tie breaker round
 	 */
-	public function actionTieBreakerRound() {
+	public function actionTieBreakerRound($t='') {
 		$this->layout = "column5";
 		$this->title = "Dashboard3";
 		
 		$idJuez = Yii::app ()->user->juezLogueado->id_juez;
+			$concurso = $this->existeConcurso ( $t );
 		
 		$existEmpate = Yii::app()->db->createCommand()
 		->from('2gom_view_calificacion_final')
-		->where('b_empate=1
+		->where('b_empate=1 and id_contest = '.$concurso->id_contest.'
 AND id_pic NOT IN (SELECT id_pic FROM 2gom_con_calificaciones_desempate WHERE id_juez=:idJuez)', array(':idJuez'=>$idJuez))
 		->queryAll();
 		
@@ -869,16 +870,18 @@ AND id_pic NOT IN (SELECT id_pic FROM 2gom_con_calificaciones_desempate WHERE id
 				"c_geek" 
 		), "css" );
 		
-		$categorias = Categoiries::model ()->findAll ( 'id_contest=1' );
+		$categorias = Categoiries::model ()->findAll ( 'id_contest='.$concurso->id_contest );
 		$this->render ( 'tieBreakerPanel', array (
-				"categorias" => $categorias 
+				"categorias" => $categorias ,
+				't'=>$t
+				
 		) );
 	}
 	
 	/**
 	 * Action que se muestra cuando una categoria esta finalizada
 	 */
-	public function actionCategoriaFinalizada() {
+	public function actionCategoriaFinalizada($token=null) {
 		$idJuez = Yii::app ()->user->juezLogueado->id_juez;
 		$this->layout = "column5";
 		$this->title = "Trabajo terminado";
@@ -886,11 +889,28 @@ AND id_pic NOT IN (SELECT id_pic FROM 2gom_con_calificaciones_desempate WHERE id
 		$cargarScripts->getScripts ( array (
 				"c_geek" 
 		), "css" );
+
+		$concurso = $this->existeConcurso ( $token );
+
+		$calificacionesTerminadas = ViewAvanceTotalJuez::model()->findAll(
+				array(
+					'condition'=>'id_contest=:idContest', 
+					'params'=>array(':idContest'=>$concurso->id_contest)
+				));
+
+		$porcentaje = 0;
+		$numTotal = count($calificacionesTerminadas);
+
+		foreach($calificacionesTerminadas as $cal){
+			$porcentaje +=$cal->num_porcentaje;
+		}		
 		
-		if (Configuracion::TIE_BREAKER) {
+		$promedio = $porcentaje/$numTotal;
+
+		if ($promedio==100) {
 			
 			$this->redirect ( array (
-					"tieBreakerRound" 
+					"tieBreakerRound", 't'=>$token 
 			) );
 		} else {
 			$this->layout = "column5";
@@ -919,7 +939,7 @@ AND id_pic NOT IN (SELECT id_pic FROM 2gom_con_calificaciones_desempate WHERE id
 	 *
 	 * @param Integer $idJuez        	
 	 */
-	public function isJuezCompleted($idJuez, $idConcurso) {
+	public function isJuezCompleted($idJuez, $idConcurso, $t) {
 		$porcentajeJuez = ViewPorcentajeJuez::model ()->find ( array (
 				"condition" => "id_juez=:idJuez AND id_contest=:idConcurso",
 				"params" => array (
@@ -932,7 +952,7 @@ AND id_pic NOT IN (SELECT id_pic FROM 2gom_con_calificaciones_desempate WHERE id
 		if ($porcentajeJuez->num_total == 100) {
 			$this->layout = "column5";
 			$this->redirect ( array (
-					"judgingPanel/categoriaFinalizada" 
+					"judgingPanel/categoriaFinalizada", 'token'=>$t
 			) );
 			exit ();
 		}
@@ -942,7 +962,7 @@ AND id_pic NOT IN (SELECT id_pic FROM 2gom_con_calificaciones_desempate WHERE id
 	/**
 	 * Vista que muestra las fotografias para desempate
 	 */
-	public function actionBreakerRoundByCategory($id) {
+	public function actionBreakerRoundByCategory($id, $t='') {
 		$this->layout = "column12";
 		$this->title = "Breaker Round";
 		$cargarScripts = new CargarScripts ();
@@ -1005,6 +1025,7 @@ AND id_pic NOT IN (SELECT id_pic FROM 2gom_con_calificaciones_desempate WHERE id
 				"categoria" => $categoria,
 				"countCalificaciones" => $countCalificaciones,
 				'lugaresCategoria'=>$lugaresCategoria,
+				't'=>$t
 		) );
 	}
 	

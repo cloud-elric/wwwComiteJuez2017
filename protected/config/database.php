@@ -1,5 +1,5 @@
 <?php
-$debug = true;
+$debug = false;
 $dataBase = array ();
 if ($debug) {
 	$dataBase = array (
