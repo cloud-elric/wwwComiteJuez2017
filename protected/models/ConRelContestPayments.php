@@ -1,26 +1,25 @@
 <?php
 
 /**
- * This is the model class for table "2gom_con_rel_jueces_categories".
+ * This is the model class for table "2gom_con_rel_contest_payments".
  *
- * The followings are the available columns in table '2gom_con_rel_jueces_categories':
- * @property string $id_category
- * @property string $id_juez
+ * The followings are the available columns in table '2gom_con_rel_contest_payments':
  * @property string $id_contest
- *
- * The followings are the available model relations:
- * @property 2gomConCategoiries $idCategory
- * @property 2gomConContests $idContest
- * @property 2gomJueEntJueces $idJuez
+ * @property string $id_tipo_pago
+ * @property string $txt_config_1
+ * @property string $txt_config_2
+ * @property string $txt_config_3
+ * @property string $txt_config_4
+ * @property string $txt_config_5
  */
-class ConRelJuecesCategories extends CActiveRecord
+class ConRelContestPayments extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return '2gom_con_rel_jueces_categories';
+		return '2gom_con_rel_contest_payments';
 	}
 
 	/**
@@ -31,12 +30,12 @@ class ConRelJuecesCategories extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_category, id_juez, id_contest', 'required'),
-			array('id_category', 'length', 'max'=>11),
-			array('id_juez, id_contest', 'length', 'max'=>10),
+			array('id_contest, id_tipo_pago', 'required'),
+			array('id_contest, id_tipo_pago', 'length', 'max'=>10),
+			array('txt_config_1, txt_config_2, txt_config_3, txt_config_4, txt_config_5', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_category, id_juez, id_contest', 'safe', 'on'=>'search'),
+			array('id_contest, id_tipo_pago, txt_config_1, txt_config_2, txt_config_3, txt_config_4, txt_config_5', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -48,9 +47,6 @@ class ConRelJuecesCategories extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'idCategory' => array(self::BELONGS_TO, 'Categoiries', 'id_category'),
-			'idContest' => array(self::BELONGS_TO, 'ConContests', 'id_contest'),
-			'idJuez' => array(self::BELONGS_TO, 'EntJueces', 'id_juez'),
 		);
 	}
 
@@ -60,9 +56,13 @@ class ConRelJuecesCategories extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_category' => 'Id Category',
-			'id_juez' => 'Id Juez',
 			'id_contest' => 'Id Contest',
+			'id_tipo_pago' => 'Id Tipo Pago',
+			'txt_config_1' => 'Txt Config 1',
+			'txt_config_2' => 'Txt Config 2',
+			'txt_config_3' => 'Txt Config 3',
+			'txt_config_4' => 'Txt Config 4',
+			'txt_config_5' => 'Txt Config 5',
 		);
 	}
 
@@ -84,9 +84,13 @@ class ConRelJuecesCategories extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id_category',$this->id_category,true);
-		$criteria->compare('id_juez',$this->id_juez,true);
 		$criteria->compare('id_contest',$this->id_contest,true);
+		$criteria->compare('id_tipo_pago',$this->id_tipo_pago,true);
+		$criteria->compare('txt_config_1',$this->txt_config_1,true);
+		$criteria->compare('txt_config_2',$this->txt_config_2,true);
+		$criteria->compare('txt_config_3',$this->txt_config_3,true);
+		$criteria->compare('txt_config_4',$this->txt_config_4,true);
+		$criteria->compare('txt_config_5',$this->txt_config_5,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -97,7 +101,7 @@ class ConRelJuecesCategories extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return ConRelJuecesCategories the static model class
+	 * @return ConRelContestPayments the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

@@ -55,7 +55,8 @@ class JudgingPanelController extends Controller {
 								'viewScorePhoto',
 								'test',
 								'concursos',
-								'feedbackReview'
+								'feedbackReview',
+								'feedbackDashBoard'
 						),
 						'users' => array (
 								'@' 
@@ -226,6 +227,21 @@ class JudgingPanelController extends Controller {
 	
 		$photoCalificar = WrkPics::model ()->find (array(
 			'condition' => 'txt_pic_number=:idPic and id_category_original=:idCategoria and id_contest=:idContest and b_status=:tipoStatus',
+			'params' => array(
+ 				":idCategoria" => $idCategoria,
+ 				":idContest" => $concurso,
+ 				':idPic' => $idPic,
+				':tipoStatus' => 2
+			)
+		));
+	
+		return $photoCalificar;
+	}
+
+	private function searchPicCalById3($idPic, $idJuez, $idCategoria, $concurso = 1) {
+	
+		$photoCalificar = WrkPics::model ()->find (array(
+			'condition' => 'id_pic=:idPic and id_category_original=:idCategoria and id_contest=:idContest and b_status=:tipoStatus',
 			'params' => array(
  				":idCategoria" => $idCategoria,
  				":idContest" => $concurso,
@@ -554,22 +570,7 @@ class JudgingPanelController extends Controller {
 		$categoriasList = CHtml::listData ( $categorias, "id_category", "txt_name" );
 		// Cargamos rubros
 		
-		$rubros = WrkPicsCalificaciones::model ()->findAll ( array (
-				'condition' => 'id_juez=:idJuez AND id_pic=:idPic',
-				'params' => array (
-						':idJuez' => $idJuez,
-						':idPic' => $photoCalificar->id_pic 
-				) 
-		) );
-		
-		//Verificar si el juez pertenece a la categoria para entrar al feedback
-		// $relJuezCat = ConRelJuecesCategories::model()->find(array(
-		// 		'condition' => 'id_category=:idCat and id_juez=:idJuez',
-		// 		'params' => array(
-		// 				':idCat' => $photoCalificar->id_category_original,
-		// 				':idJuez' => $idJuez
-		// 		)
-		// ));
+	
 
 		$relJuezCat = false;
 		
@@ -583,7 +584,7 @@ class JudgingPanelController extends Controller {
 
 		$hasFeedback = false;
 		
-		if (empty ( $rubros )) {
+		
 			$rubros = CatCalificacionesRubros::model ()->findAll ( array (
 					"condition" => "b_habilitado=1 AND id_contest=:idContest",
 					"params" => array (
@@ -604,17 +605,17 @@ class JudgingPanelController extends Controller {
 			) );
 			
 			return;
-		}
+	
 
-		if(!empty ( $rubros ) && $relJuezCat){
-			$this->redirect ( array (
-					"judgingPanel/feedback",
-					"idPhoto" => $photoCalificar->txt_pic_number,
-					't' => $t,
-					'idCategory' => $idCategoria,
-					'idContest' => $concurso->id_contest
-			) );
-		}
+		// if(!empty ( $rubros ) && $relJuezCat){
+		// 	$this->redirect ( array (
+		// 			"judgingPanel/feedback",
+		// 			"idPhoto" => $photoCalificar->txt_pic_number,
+		// 			't' => $t,
+		// 			'idCategory' => $idCategoria,
+		// 			'idContest' => $concurso->id_contest
+		// 	) );
+		// }
 	}
 	
 
@@ -664,26 +665,35 @@ class JudgingPanelController extends Controller {
 				) 
 		) );
 
-
-		$photoFeedBackCalificar = $this->searchPicRetro ( $categoria->id_category, $concurso->id_contest );
+		// Buscar una de las fotos que me tocan
+		$photoFeedBackCalificar = $this->searchPicRetro ( $categoria->id_category, $concurso->id_contest, $idJuez );
 
 		// Si no hay foto a calificar
 		if (empty ( $photoFeedBackCalificar )) {
 			
 			$this->redirect ( array (
-					'judgingPanel/feedBackReview',
-					'idCategoria' => $categoria->id_category,
+					'judgingPanel/feedbackDashBoard',
+					
 					't' => $t 
 			) );
 		}
 
-		$photoCalificar = $this->searchPicCalById2($photoFeedBackCalificar->txt_pic_number, $idJuez, $categoria->id_category, $concurso->id_contest);
+		$photoCalificar = $this->searchPicCalById3($photoFeedBackCalificar->id_pic, $idJuez, $categoria->id_category, $concurso->id_contest);
 
 		// Si vienen datos por POST asignamos
 		if (isset ( $_POST ["txt_retro"] )) {
 			
 			$retro = nl2br ( $_POST ["txt_retro"] );
 			
+			$calificaciones = WrkPicsCalificaciones::model ()->findAll ( array (
+				'condition' => 'id_pic=:idPic AND id_juez=:idJuez AND id_contest=1',
+				'params' => array (
+						':idPic' => $photoCalificar->id_pic,
+						':idJuez' => $idJuez 
+				) 
+			) );
+
+
 			// Guardamos las calificaciones
 			foreach ( $calificaciones as $calificacion ) {
 				$calificacion->txt_retro = $retro;
@@ -700,6 +710,19 @@ class JudgingPanelController extends Controller {
 			$cJ->id_status_calificacion = 2;
 			$cJ->id_usuario = $photoCalificar->ID;
 			$cJ->save ();
+
+			$guardarFeedback = PicsJuecesRetro::model()->find(array(
+				'condition'=>'id_contest=:idContest AND id_pic =:idPic AND id_juez=:idJuez AND id_category=:idCategory',
+				'params'=>array(
+					':idContest'=>$concurso->id_contest,
+					':idPic'=>$photoFeedBackCalificar->id_pic,
+					':idJuez'=>$idJuez,
+					':idCategory'=>$categoria->id_category
+				)
+			));
+
+			$guardarFeedback->b_calificada = 1;
+			$guardarFeedback->save();
 			
 			$this->redirect ( array (
 					"judgingPanel/feedBackReview",
@@ -711,27 +734,25 @@ class JudgingPanelController extends Controller {
 		$this->render ( 'feedback', array (
 				'photoCalificar' => $photoCalificar,
 				't' => $t,
-				'idCategoria' => $categoria->id_category, 
+				'idCategoria' => $categoria->txt_token_category, 
 		) );
 	}
 
-	private function searchPicRetro($idCategoria, $concurso = 1) {
+	private function searchPicRetro($idCategoria, $concurso = 1, $idJuez) {
 		
 		// Condiciones de busqueda
 		$criteria = new CDbCriteria ();
-		$criteria->alias = "PP";
-		$criteria->condition = "PP.num_addons >0 AND
-								PP.id_category_original =:idCategoria 
-								AND PP.id_contest = :idContest
-								AND PP.id_pic NOT IN (SELECT PC.id_pic FROM 2gom_wrk_pics_calificaciones PC WHERE PC.txt_retro is NOT null )";
+		
+		$criteria->condition = "id_contest=:idContest AND id_category=:idCategoria AND id_juez=:idJuez AND b_calificada=0";
 		$criteria->order = 'RAND()';
 		$criteria->params = array (
-				
+				":idContest" => $concurso, 
 				":idCategoria" => $idCategoria,
-				":idContest" => $concurso 
+				':idJuez'=>$idJuez
+				
 		);
 		
-		$photoCalificar = ViewUsuarioPicsProductos::model ()->find ( $criteria );
+		$photoCalificar = PicsJuecesRetro::model ()->find ( $criteria );
 		
 		return $photoCalificar;
 	}
@@ -782,9 +803,9 @@ class JudgingPanelController extends Controller {
 						":idConcurso" => $concurso->id_contest 
 				) 
 		) );
-		
+		$categoria->id_category;
 		//$photoCalificar = $this->searchPicCalById($idPhoto, $idJuez, $categoria->id_category );
-		$photoCalificar = $this->searchPicCalById2($idPhoto, $idJuez, $categoria->id_category, $concurso->id_contest);
+		$photoCalificar = $this->searchPicCalById3($idPhoto, $idJuez, $categoria->id_category, $concurso->id_contest);
 		
 		// Si no hay foto a calificar
 		if (empty ( $photoCalificar )) {
@@ -807,11 +828,20 @@ class JudgingPanelController extends Controller {
 
 		
 		
-		// Si vienen datos por POST asignamos
 		if (isset ( $_POST ["txt_retro"] )) {
 			
 			$retro = nl2br ( $_POST ["txt_retro"] );
 			
+			$calificaciones = WrkPicsCalificaciones::model ()->findAll ( array (
+				'condition' => 'id_pic=:idPic AND id_juez=:idJuez AND id_contest=:idContest',
+				'params' => array (
+						':idPic' => $photoCalificar->id_pic,
+						':idJuez' => $idJuez,
+						':idContest'=>$concurso->id_contest 
+				) 
+			) );
+
+
 			// Guardamos las calificaciones
 			foreach ( $calificaciones as $calificacion ) {
 				$calificacion->txt_retro = $retro;
@@ -828,12 +858,26 @@ class JudgingPanelController extends Controller {
 			$cJ->id_status_calificacion = 2;
 			$cJ->id_usuario = $photoCalificar->ID;
 			$cJ->save ();
+
+			$guardarFeedback = PicsJuecesRetro::model()->find(array(
+				'condition'=>'id_contest=:idContest AND id_pic =:idPic AND id_juez=:idJuez AND id_category=:idCategory',
+				'params'=>array(
+					':idContest'=>$concurso->id_contest,
+					':idPic'=>$photoCalificar->id_pic,
+					':idJuez'=>$idJuez,
+					':idCategory'=>$categoria->id_category
+				)
+			));
+
+			$guardarFeedback->b_calificada = 1;
+			$guardarFeedback->save();
 			
 			$this->redirect ( array (
-					"judgingPanel/photoReview",
-					"idCategoria" => $idCategory,
+					"judgingPanel/feedBackReview",
+					'idCategoria' => $categoria->txt_token_category,
 					't' => $t 
 			) );
+
 		}
 		
 		$this->render ( 'feedback', array (
@@ -861,7 +905,7 @@ AND id_pic NOT IN (SELECT id_pic FROM 2gom_con_calificaciones_desempate WHERE id
 		
 		if(count($existEmpate)==0){
 			
-			$this->render('categoriaFinalizada');
+			$this->redirect(array('feedbackDashBoard', 't'=>$t));
 			return;
 		}
 		
@@ -876,6 +920,73 @@ AND id_pic NOT IN (SELECT id_pic FROM 2gom_con_calificaciones_desempate WHERE id
 				't'=>$t
 				
 		) );
+	}
+
+	/**
+	 * 
+	 */
+	public function actionFeedbackDashBoard($t=''){
+
+		// Obtenemos el id del juez
+		$idJuez = Yii::app ()->user->juezLogueado->id_juez;
+		
+		// Revisa si existe y obtenemos el concurso
+		$concurso = $this->existeConcurso ( $t );
+		
+		// Revisa si el juez pertenece al concurso
+		$isJuez = JueRelJuecesContests::model ()->find ( array (
+				"condition" => "id_juez=:idJuez AND id_contests=:idContest",
+				"params" => array (
+						":idJuez" => $idJuez,
+						":idContest" => $concurso->id_contest 
+				) 
+		) );
+		
+		// Revisa si el juez finalizo su trabajo
+		$this->isJuezCompletedFeedback ( $idJuez, $concurso->id_contest );
+		
+			// Obtenemos el avance del juez
+		$avance = ConRelJuecesCategories::model()->findAll(
+				array(
+					'condition'=>'id_juez=:idJuez AND id_contest=:idContest',
+					'params'=>array(
+							':idJuez'=>$idJuez,
+							':idContest'=>$concurso->id_contest
+					)
+				)
+			);
+
+		
+		
+		$this->layout = "column5";
+		
+		$cargarScripts = new CargarScripts ();
+		$cargarScripts->getScripts ( array (
+				"c_geek" 
+		), "css" );
+		
+		$this->render ( 'feedbackDashBoard', array (
+				'avance' => $avance,
+				't' => $t 
+		) );
+
+	}
+
+	public function isJuezCompletedFeedback($idJuez, $idContest){
+			// Obtenemos el avance del juez
+		$avance = PicsJuecesRetro::model()->findAll(
+			array(
+					'condition'=>'id_juez=:idJuez AND id_contest=:idContest AND b_calificada=0', 
+					'params'=>array(':idJuez'=>$idJuez, ':idContest'=>$idContest )
+				)
+			);
+
+			if(empty($avance)){
+				$this->layout = "column5";
+				$this->render('categoriaFinalizada');
+				exit;
+			}
+
 	}
 	
 	/**

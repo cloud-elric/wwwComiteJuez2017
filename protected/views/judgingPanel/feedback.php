@@ -4,6 +4,8 @@ $this->title = Yii::t ( 'site', 'Photo Judging - Photo Review' );
 <div id="page" class="photo-page">
 			<?php
 			$form = $this->beginWidget ( 'CActiveForm', array (
+					'action'=>Yii::app()->createUrl("judgingPanel/feedback", array('idPhoto'=>$photoCalificar->id_pic, 't'=>$t,'idCategory'=>$idCategoria, )),
+					
 					'id' => 'calificar-foto-form',
 					'enableAjaxValidation' => false 
 			) );

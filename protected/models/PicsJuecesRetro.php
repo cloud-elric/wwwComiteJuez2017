@@ -1,26 +1,29 @@
 <?php
 
 /**
- * This is the model class for table "2gom_con_rel_jueces_categories".
+ * This is the model class for table "2gom_pics_jueces_retro".
  *
- * The followings are the available columns in table '2gom_con_rel_jueces_categories':
- * @property string $id_category
+ * The followings are the available columns in table '2gom_pics_jueces_retro':
  * @property string $id_juez
+ * @property string $id_pic
  * @property string $id_contest
+ * @property string $id_category
+ * @property string $b_calificada
  *
  * The followings are the available model relations:
  * @property 2gomConCategoiries $idCategory
  * @property 2gomConContests $idContest
  * @property 2gomJueEntJueces $idJuez
+ * @property 2gomWrkPics $idPic
  */
-class ConRelJuecesCategories extends CActiveRecord
+class PicsJuecesRetro extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return '2gom_con_rel_jueces_categories';
+		return '2gom_pics_jueces_retro';
 	}
 
 	/**
@@ -31,12 +34,11 @@ class ConRelJuecesCategories extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_category, id_juez, id_contest', 'required'),
-			array('id_category', 'length', 'max'=>11),
-			array('id_juez, id_contest', 'length', 'max'=>10),
+			array('id_juez, id_pic, id_contest, id_category', 'required'),
+			array('id_juez, id_pic, id_contest, id_category, b_calificada', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_category, id_juez, id_contest', 'safe', 'on'=>'search'),
+			array('id_juez, id_pic, id_contest, id_category, b_calificada', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -48,9 +50,10 @@ class ConRelJuecesCategories extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'idCategory' => array(self::BELONGS_TO, 'Categoiries', 'id_category'),
-			'idContest' => array(self::BELONGS_TO, 'ConContests', 'id_contest'),
-			'idJuez' => array(self::BELONGS_TO, 'EntJueces', 'id_juez'),
+			'idCategory' => array(self::BELONGS_TO, '2gomConCategoiries', 'id_category'),
+			'idContest' => array(self::BELONGS_TO, '2gomConContests', 'id_contest'),
+			'idJuez' => array(self::BELONGS_TO, '2gomJueEntJueces', 'id_juez'),
+			'idPic' => array(self::BELONGS_TO, '2gomWrkPics', 'id_pic'),
 		);
 	}
 
@@ -60,9 +63,11 @@ class ConRelJuecesCategories extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_category' => 'Id Category',
 			'id_juez' => 'Id Juez',
+			'id_pic' => 'Id Pic',
 			'id_contest' => 'Id Contest',
+			'id_category' => 'Id Category',
+			'b_calificada' => 'B Calificada',
 		);
 	}
 
@@ -84,9 +89,11 @@ class ConRelJuecesCategories extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id_category',$this->id_category,true);
 		$criteria->compare('id_juez',$this->id_juez,true);
+		$criteria->compare('id_pic',$this->id_pic,true);
 		$criteria->compare('id_contest',$this->id_contest,true);
+		$criteria->compare('id_category',$this->id_category,true);
+		$criteria->compare('b_calificada',$this->b_calificada,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -97,7 +104,7 @@ class ConRelJuecesCategories extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return ConRelJuecesCategories the static model class
+	 * @return PicsJuecesRetro the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
